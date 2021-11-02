@@ -1,6 +1,4 @@
 ### PowerWorld
-#A Simple PowerNukkit World Editor by Azura4k
-
-
-#Item you want to reperesent wand: Default is 288 (Feather)
+#A Simple Powernukkit World Editor by Azura4k
+#Item you want to represent wand: Default is 288 (Feather)
 WandItemID: 288

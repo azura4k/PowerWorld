@@ -1,6 +1,6 @@
   name: PowerWorld
   main: com.azura4k.PowerWorld.PowerWorld
-  version: "${project.version}"
+  version: ${project.version}
   api: ["1.0.13"]
   author: Azura4k
   description: World Edit Designed for PowerNukkit Use.
@@ -8,15 +8,15 @@
   commands:
     wand:
       description: Obtain The Wand
-      usage: "/wand"
+      usage: "//wand"
       permission: powerworld.cmd.use
     set:
       description: Set the Blocks in position
-      usage: "/set <BlockID:Meta>"
+      usage: "//set <BlockID:Meta>"
       permission: powerworld.cmd.use
     replace:
-      description: Replace Blocks With Specific ID with Other Blocks
-      usage: "/replace <BlockID> <NewBlockID>"
+      description: Replace Blocks With Specific ID with Another Block
+      usage: "//replace <NewBlockID:Meta> <BlockBeingReplaced:Meta>"
       permission: powerworld.cmd.use
 
   permissions:
