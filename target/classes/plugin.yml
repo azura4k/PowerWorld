@@ -1,6 +1,6 @@
   name: PowerWorld
   main: com.azura4k.PowerWorld.PowerWorld
-  version: ${project.version}
+  version: 1.2
   api: ["1.0.13"]
   author: Azura4k
   description: World Edit Designed for PowerNukkit Use.
