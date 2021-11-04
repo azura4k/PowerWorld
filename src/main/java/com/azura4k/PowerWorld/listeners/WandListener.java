@@ -6,9 +6,6 @@ import cn.nukkit.event.player.PlayerInteractEvent;
 import cn.nukkit.math.Vector3;
 import com.azura4k.PowerWorld.PowerWorldCommon;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class WandListener implements Listener {
     PowerWorldCommon PC = new PowerWorldCommon();
 
@@ -18,15 +15,14 @@ public class WandListener implements Listener {
     @EventHandler
     public void onWandClick(PlayerInteractEvent event){
         if (PC.WandisSelected(event.getPlayer())){
-            switch (event.getAction()){
-                case RIGHT_CLICK_BLOCK -> {
+            if (event.getAction() == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK){
                     PrimaryPoint.x = event.getBlock().getFloorX();
                     PrimaryPoint.y = event.getBlock().getFloorY();
                     PrimaryPoint.z = event.getBlock().getFloorZ();
                     event.getPlayer().sendMessage("Primary Location Selected: X" + PrimaryPoint.x + " Y" + PrimaryPoint.y + " Z" + PrimaryPoint.z);
                     PC.StorePosLocation(this.PrimaryPoint, this.SecondaryPoint);
-                }
-                case LEFT_CLICK_BLOCK -> {
+            }
+            else if(event.getAction() == PlayerInteractEvent.Action.LEFT_CLICK_BLOCK){
                     SecondaryPoint.x = event.getBlock().getFloorX();
                     SecondaryPoint.y = event.getBlock().getFloorY();
                     SecondaryPoint.z = event.getBlock().getFloorZ();
@@ -36,4 +32,3 @@ public class WandListener implements Listener {
             }
         }
     }
-}

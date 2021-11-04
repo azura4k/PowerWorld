@@ -66,7 +66,7 @@ public class SetBlocksCmd extends Command {
         for (int x = minX; x <= maxX; x++) {
             for (int y = minY; y <= maxY; y++) {
                 for (int z = minZ; z <= maxZ; z++) {
-                    world.setBlock(x, y, z, SetBlock, true, true);
+                    world.setBlock(x, y, z, SetBlock, false, true);
                 }
             }
         }

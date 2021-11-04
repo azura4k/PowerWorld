@@ -75,11 +75,11 @@ public class ReplaceBlocksCmd extends Command {
                     if (ReplacementBlock.getFullId() > 0){
                         //Get specific
                         if (world.getBlock(x, y, z).getFullId() == ReplacementBlock.getFullId()) {
-                            world.setBlock(x, y, z, TargetBlock, true, true);
+                            world.setBlock(x, y, z, TargetBlock, false, true);
                         }
                     }
                     else if (world.getBlock(x, y, z).getId() == ReplacementBlock.getId()) {
-                        world.setBlock(x, y, z, TargetBlock, true, true);
+                        world.setBlock(x, y, z, TargetBlock, false, true);
                     }
                 }
             }
