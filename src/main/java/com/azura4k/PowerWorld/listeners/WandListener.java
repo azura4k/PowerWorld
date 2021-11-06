@@ -19,15 +19,15 @@ public class WandListener implements Listener {
                     PrimaryPoint.x = event.getBlock().getFloorX();
                     PrimaryPoint.y = event.getBlock().getFloorY();
                     PrimaryPoint.z = event.getBlock().getFloorZ();
-                    event.getPlayer().sendMessage("Primary Location Selected: X" + PrimaryPoint.x + " Y" + PrimaryPoint.y + " Z" + PrimaryPoint.z);
-                    PC.StorePosLocation(this.PrimaryPoint, this.SecondaryPoint);
+                    event.getPlayer().sendMessage("Pos1: X" + PrimaryPoint.x + " Y" + PrimaryPoint.y + " Z" + PrimaryPoint.z);
+                    PC.StorePosLocation(this.PrimaryPoint, this.SecondaryPoint, event.getPlayer());
             }
             else if(event.getAction() == PlayerInteractEvent.Action.LEFT_CLICK_BLOCK){
                     SecondaryPoint.x = event.getBlock().getFloorX();
                     SecondaryPoint.y = event.getBlock().getFloorY();
                     SecondaryPoint.z = event.getBlock().getFloorZ();
-                    event.getPlayer().sendMessage("Secondary Location Selected: X" + SecondaryPoint.x + " Y" + SecondaryPoint.y + " Z" + SecondaryPoint.z);
-                    PC.StorePosLocation(this.PrimaryPoint, this.SecondaryPoint);
+                    event.getPlayer().sendMessage("Pos2: X" + SecondaryPoint.x + " Y" + SecondaryPoint.y + " Z" + SecondaryPoint.z);
+                    PC.StorePosLocation(this.PrimaryPoint, this.SecondaryPoint, event.getPlayer());
                 }
             }
         }

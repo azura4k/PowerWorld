@@ -1,8 +1,8 @@
 package com.azura4k.PowerWorld.commands;
 
+import cn.nukkit.Player;
 import cn.nukkit.block.Block;
 import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandExecutor;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.level.Level;
 import cn.nukkit.math.Vector3;
@@ -55,10 +55,12 @@ public class ReplaceBlocksCmd extends Command {
         }
 
         //PART TWO - GET PLAYER INFO
-        Level world = commandSender.getServer().getPlayer(commandSender.getName()).level;
-        Vector3 Pos1 = PC.GetPos1();
-        Vector3 Pos2 = PC.GetPos2();
-
+        Player player = commandSender.getServer().getPlayer(commandSender.getName());
+        Level world = player.level;
+        Vector3 Pos1 = PC.GetPos1(player);
+        Vector3 Pos2 = PC.GetPos2(player);
+        //Part TWO1/2 Save Blocks in Position
+        PC.InsertFunctionHistory(Pos1, Pos2, world, player);
         //PART THREE - PLACE BLOCKS IN WORLD
         //Curtsy of DaPorkChop - Thank You SOOOOO Much
         int minX = Math.min(Pos1.getFloorX(), Pos2.getFloorX());

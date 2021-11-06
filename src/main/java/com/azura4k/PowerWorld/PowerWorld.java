@@ -1,21 +1,26 @@
 package com.azura4k.PowerWorld;
 
+import cn.nukkit.Player;
 import cn.nukkit.block.Block;
 import cn.nukkit.command.SimpleCommandMap;
+import cn.nukkit.item.Item;
+import cn.nukkit.item.enchantment.Enchantment;
+import cn.nukkit.level.Level;
 import cn.nukkit.math.Vector3;
+import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.plugin.PluginBase;
 import com.azura4k.PowerWorld.commands.ReplaceBlocksCmd;
 import com.azura4k.PowerWorld.commands.SetBlocksCmd;
+import com.azura4k.PowerWorld.commands.UndoCmd;
 import com.azura4k.PowerWorld.commands.WandCmd;
 import com.azura4k.PowerWorld.listeners.WandListener;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class PowerWorld extends PluginBase {
-    public static Vector3 Vector1;
-    public static Vector3 Vector2;
-    public static List<Block> Blocks = new ArrayList<>();
+    public static ArrayList<ArrayList<Block>> UndoList = new ArrayList<>();
+    public static final int UndoStorageLimit = 5;
 
     @Override
     public void onLoad() {
@@ -25,6 +30,8 @@ public class PowerWorld extends PluginBase {
         CM.register("/wand", new WandCmd());
         CM.register("/set", new SetBlocksCmd());
         CM.register("/replace", new ReplaceBlocksCmd());
+        CM.register("/undo", new UndoCmd());
+        //Config Stuff
     }
 
     public void onEnable() {
@@ -41,15 +48,4 @@ public class PowerWorld extends PluginBase {
     }
 
 
-    //Needed for Wand Selector
-    public void StorePosLocation(Vector3 Vector1, Vector3 Vector2){
-        this.Vector1 = Vector1;
-        this.Vector2 = Vector2;
-    }
-    public final Vector3 GetPos1() {
-        return this.Vector1;
-    }
-    public final Vector3 GetPos2() {
-        return this.Vector2;
-    }
 }
