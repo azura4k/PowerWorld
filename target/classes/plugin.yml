@@ -1,28 +1,14 @@
-  name: PowerWorld
-  main: com.azura4k.PowerWorld.PowerWorld
-  version: 1.3
-  api: ["1.0.13"]
+  name: PowerWorld v2
+  main: com.azura4k.PowerWorld.PowerWorldMain
+  version: "2.0"
+  api: ["1.0.5"]
   author: Azura4k
-  description: World Edit Designed for PowerNukkit Use.
-  website: https://github.com/azura4k/PowerWorld
   commands:
     wand:
-      description: Obtain The Wand
-      usage: "//wand"
-      permission: powerworld.cmd.use
-    set:
-      description: Set the Blocks in position
-      usage: "//set <BlockID:Meta>"
-      permission: powerworld.cmd.use
-    replace:
-      description: Replace Blocks With Specific ID with Another Block
-      usage: "//replace <NewBlockID:Meta> <BlockBeingReplaced:Meta>"
-      permission: powerworld.cmd.use
-    undo:
-      description: Reverse a Block Command to the most recent command, or more. Only 5 commands back
-      usage: "//undo <Sequence:Int>"
-      permission: powerworld.cmd.use
+      description: "Get World Edit Wand"
+      usage: "/Wand. Make sure you have no items in hand"
+      permission: "powerworld.cmd.admin"
   permissions:
-    powerworld.cmd.use:
-      description: "Allows the user to run any world edit commands"
-      default: op
+    powerworld.cmd.admin:
+      description: "Ability to use all powerworld commands"
+      default: false
