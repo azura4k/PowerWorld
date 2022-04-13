@@ -20,7 +20,7 @@ public class PowerWorldAPI {
         if (
                 wand.getCustomName() == wandCustomName
                 && wand.hasEnchantment(wandEnchantID)
-                && player.hasPermission(permissionName)
+                && player.isOp()
         ){
            return true;
         }

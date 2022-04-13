@@ -1,3 +1,4 @@
 com/azura4k/PowerWorld/commands/WandCmd.class
 com/azura4k/PowerWorld/PowerWorldMain.class
 com/azura4k/PowerWorld/PowerWorldAPI.class
+com/azura4k/PowerWorld/listeners/WandPositionListener.class
